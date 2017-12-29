@@ -7,19 +7,13 @@ document.addEventListener('DOMContentLoaded', function(){
     Action:[],
     World:[]};
 
-  function getAppendElement(element, behaviour, attribute){
-    var el = document.querySelectorAll(element);
-    switch (behaviour) {
-      case 'html':
-      el.innerHTML
 
-        break;
-      case 'attr':
-      el.getAttribute(attribute)
-
-        break;
-      default:
-
-    }
+  function changeAttr(el, attr, attrProperty){
+    var el = document.querySelector(el);
+    el.setAttribute(attr, attrProperty)
   }
+
+
+  changeAttr('#draw', 'style', 'color:red;')
+
 }, false);
