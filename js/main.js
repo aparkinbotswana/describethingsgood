@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   const topic = [' Object', 'Nature', 'Random', 'Person', 'Action', 'World'];
-  const card = {Objects:['object1', 'object2', 'object3', 'object4'],
+  var card = {Objects:['object1', 'object2', 'object3', 'object4'],
     Nature:['nature1', 'nature2', 'nature3', 'nature4'],
     Random:['random1', 'random2', 'random3', 'random4'],
     Person:['person1', 'person2', 'person3', 'person4'],
@@ -15,13 +15,31 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   function getRandomInt(max) {
-    return Math.floor(Math.random() * (max - 0 + 1)) + 0;
+    return Math.floor(Math.random() * max);
   }
 
-  console.log(Object.entries(card));
 
-
-  function drawCard(){
-
+  function drawCard(cardNum){
+    // Object.entries(card)[0][1][cardNum]
+    // Object.entries(card)[1][1][cardNum]
+    // Object.entries(card)[2][1][cardNum]
+    // Object.entries(card)[3][1][cardNum]
+    // Object.entries(card)[4][1][cardNum]
+    // Object.entries(card)[5][1][cardNum]
+    console.log(Object.entries(card)[0][1][cardNum]);
+    console.log(Object.entries(card)[1][1][cardNum]);
+    console.log(Object.entries(card)[2][1][cardNum]);
+    console.log(Object.entries(card)[3][1][cardNum]);
+    console.log(Object.entries(card)[4][1][cardNum]);
+    console.log(Object.entries(card)[5][1][cardNum]);
+    discardCard(cardNum)
   }
+
+
+  function discardCard(cardNum) {
+    // takes drawn card out of card array so that it is not drawn again
+  }
+
+
+  drawCard(getRandomInt(Object.entries(card)[0][1].length))
 }, false);
