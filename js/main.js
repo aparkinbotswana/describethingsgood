@@ -20,18 +20,25 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   function drawCard(cardNum){
+    var i = 0
+    if (Object.entries(card)[0][1].length <= 0) {
+      console.log('No more cards');
+      return
+    }
     // Object.entries(card)[0][1][cardNum]
     // Object.entries(card)[1][1][cardNum]
     // Object.entries(card)[2][1][cardNum]
     // Object.entries(card)[3][1][cardNum]
     // Object.entries(card)[4][1][cardNum]
     // Object.entries(card)[5][1][cardNum]
-    console.log(Object.entries(card)[0][1][cardNum]);
-    console.log(Object.entries(card)[1][1][cardNum]);
-    console.log(Object.entries(card)[2][1][cardNum]);
-    console.log(Object.entries(card)[3][1][cardNum]);
-    console.log(Object.entries(card)[4][1][cardNum]);
-    console.log(Object.entries(card)[5][1][cardNum]);
+    while (i < 6) {
+      if (i == 6) {
+      break;
+      }
+      console.log(Object.entries(card)[i][1][cardNum]);
+      i++
+    }
+
     discardCard(cardNum)
   }
 
