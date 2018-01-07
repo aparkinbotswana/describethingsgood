@@ -19,26 +19,20 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 
-  function drawCard(cardNum){
-    var i = 0
+  function drawCard(){
+    var cardNum = getRandomInt(Object.entries(card)[0][1].length)
+    var objectKey = 0
     if (Object.entries(card)[0][1].length <= 0) {
       console.log('No more cards');
       return
     }
-    // Object.entries(card)[0][1][cardNum]
-    // Object.entries(card)[1][1][cardNum]
-    // Object.entries(card)[2][1][cardNum]
-    // Object.entries(card)[3][1][cardNum]
-    // Object.entries(card)[4][1][cardNum]
-    // Object.entries(card)[5][1][cardNum]
-    while (i < 6) {
-      if (i == 6) {
+    while (objectKey < 6) {
+      if (objectKey == 6) {
       break;
       }
-      console.log(Object.entries(card)[i][1][cardNum]);
-      i++
+      console.log(Object.entries(card)[objectKey][1][cardNum]);
+      objectKey++
     }
-
     discardCard(cardNum)
   }
 
@@ -48,5 +42,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 
-  drawCard(getRandomInt(Object.entries(card)[0][1].length))
+  document.getElementById('draw').addEventListener('click', drawCard);
+
+
 }, false);
