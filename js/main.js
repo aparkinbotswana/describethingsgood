@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function drawCard(){
     var cardNum = getRandomInt(Object.entries(card)[0][1].length)
-    var objectKey = 0
+    let objectKey = 0
     if (Object.entries(card)[0][1].length <= 0) {
       console.log('No more cards');
       return
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function(){
       if (objectKey == 6) {
       break;
       }
-      console.log(Object.entries(card)[objectKey][1][cardNum]);
       objectKey++
     }
     discardCard(cardNum)
@@ -38,11 +37,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   function discardCard(cardNum) {
-    // takes drawn card out of card array so that it is not drawn again
-  }
+    for (const key in card) {
+      var removed = `${card[key].splice(cardNum, 1)}`
+    }
+  } // takes drawn card out of card array so that it is not drawn again
+
 
 
   document.getElementById('draw').addEventListener('click', drawCard);
-
-
 }, false);
