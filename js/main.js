@@ -1,11 +1,18 @@
 document.addEventListener('DOMContentLoaded', function(){
   const topic = [' Object', 'Nature', 'Random', 'Person', 'Action', 'World'];
-  var card = {Objects:['object1', 'object2', 'object3', 'object4'],
-    Nature:['nature1', 'nature2', 'nature3', 'nature4'],
-    Random:['random1', 'random2', 'random3', 'random4'],
-    Person:['person1', 'person2', 'person3', 'person4'],
-    Action:['action1', 'action2', 'action3', 'action4'],
-    World:['world1', 'world2', 'world3', 'world4']};
+  var card = {Objects:['object0', 'object1', 'object2', 'object3', 'object4'],
+    Nature:['nature0', 'nature1', 'nature2', 'nature3', 'nature4'],
+    Random:['random0', 'random1', 'random2', 'random3', 'random4'],
+    Person:['person0', 'person1', 'person2', 'person3', 'person4'],
+    Action:['action0', 'action1', 'action2', 'action3', 'action4'],
+    World:['world0', 'world1', 'world2', 'world3', 'world4']};
+
+    // console.log(Object.entries(card)[0][1][0]);
+    // console.log(Object.entries(card)[1][1]);
+    // console.log(Object.entries(card)[2][1]);
+    // console.log(Object.entries(card)[3][1]);
+    // console.log(Object.entries(card)[4][1]);
+    // console.log(Object.entries(card)[5][1]);
 
 
   function changeAttr(el, attr, attrProperty){
@@ -19,6 +26,11 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 
+  function topicSelect() {
+    let choosenTopic = topic[getRandomInt(topic.length)]
+  }
+
+
   function drawCard(){
     var cardNum = getRandomInt(Object.entries(card)[0][1].length)
     let objectKey = 0
@@ -26,10 +38,13 @@ document.addEventListener('DOMContentLoaded', function(){
       console.log('No more cards');
       return
     }
+    topicSelect()
     while (objectKey < 6) {
       if (objectKey == 6) {
       break;
       }
+      //draw card ui stuff goes here YUMMY!!!
+      console.log(Object.entries(card)[objectKey][1][cardNum]);
       objectKey++
     }
     discardCard(cardNum)
@@ -38,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function discardCard(cardNum) {
     for (const key in card) {
-      var removed = `${card[key].splice(cardNum, 1)}`
+      let removed = `${card[key].splice(cardNum, 1)}`
     }
   } // takes drawn card out of card array so that it is not drawn again
 
 
-
   document.getElementById('draw').addEventListener('click', drawCard);
+  // document.getElementById('draw').addEventListener('click', topicSelect);
 }, false);
