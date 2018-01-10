@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   function changeAttr(el, attr, attrProperty){
-    document.querySelector(el).setAttribute(attr, attrProperty)
+    document.querySelector(el).setAttribute(attr, attrProperty);
   }
 
 
