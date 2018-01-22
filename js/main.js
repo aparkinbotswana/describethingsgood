@@ -56,12 +56,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   } // takes drawn card out of card array so that it is not drawn again
 
-  // function animationPlay() {
-  //   document.querySelector('.animation-target').setAttribute('style', 'animation-play-state:running;');
-  // }
-
-  document.getElementById('draw').addEventListener('click', drawCard);
-  // document.getElementById('draw').addEventListener('click', animationPlay);
 
   function animationPlay() {
     let bounce = new Bounce();
@@ -83,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function(){
         stiffness: 3
     })
     .applyTo(document.querySelectorAll(".animation-target"));
-  }
-  animationPlay();
+  } //animation for cards
+
+
+  document.getElementById('draw').addEventListener('click', drawCard);
+  document.getElementById('draw').addEventListener('click', animationPlay);
 }, false);
