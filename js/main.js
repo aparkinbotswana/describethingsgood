@@ -64,28 +64,23 @@ document.addEventListener('DOMContentLoaded', function(){
   // document.getElementById('draw').addEventListener('click', animationPlay);
 
   function animationPlay() {
-    var bounce = new Bounce();
+    let bounce = new Bounce();
     bounce
-    .translate({
-      from: { x: -300, y: 0 },
-      to: { x: 0, y: 0 },
-      duration: 600,
-      stiffness: 4
+    .rotate({
+        from: 0,
+        to: 360,
+        easing: "bounce",
+        duration: 1000,
+        delay: 0,
+        bounce: 4,
+        stiffness: 3
     })
-    .scale({
-      from: { x: 1, y: 1 },
-      to: { x: 0.1, y: 2.3 },
-      easing: "sway",
-      duration: 800,
-      delay: 65,
-      stiffness: 2
-    })
-    .scale({
-      from: { x: 1, y: 1},
-      to: { x: 5, y: 1 },
-      easing: "sway",
-      duration: 300,
-      delay: 30,
+    .skew({
+        easing: "sway",
+        duration: 1000,
+        delay: 0,
+        bounce: 4,
+        stiffness: 3
     })
     .applyTo(document.querySelectorAll(".animation-target"));
   }
