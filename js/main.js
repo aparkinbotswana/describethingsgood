@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // console.log(Object.entries(card)[3][1]);
     // console.log(Object.entries(card)[4][1]);
     // console.log(Object.entries(card)[5][1]);
+    console.log(card);
 
 
   function changeAttr(el, attr, attrProperty){
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function topicSelect() {
     let choosenTopic = topic[getRandomInt(topic.length)]
+    console.log(choosenTopic);
   }
 
 
