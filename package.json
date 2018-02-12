@@ -1,0 +1,26 @@
+{
+  "name": "describethingsgood",
+  "version": "0.0.1",
+  "description": "jame's game",
+  "main": "main.js",
+  "dependencies": {
+    "bounce.js": "^0.8.2"
+  },
+  "devDependencies": {
+    "browserify": "^15.2.0"
+  },
+  "scripts": {
+    "test": "echo \"no tests yet\"",
+    "bundle": "browserify ./js/main.js --outfile ./js/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aparkinbotswana/describethingsgood.git"
+  },
+  "author": "aparkinbotswana <theojame1989@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aparkinbotswana/describethingsgood/issues"
+  },
+  "homepage": "https://github.com/aparkinbotswana/describethingsgood#readme"
+}

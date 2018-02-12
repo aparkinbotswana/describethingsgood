@@ -1,11 +1,12 @@
+import { topic, card } from "cards"
 document.addEventListener('DOMContentLoaded', function(){
-  const topic = [' Object', 'Nature', 'Random', 'Person', 'Action', 'World'];
-  var card = {Objects:['object0', 'object1', 'object2', 'object3', 'object4'],
-    Nature:['nature0', 'nature1', 'nature2', 'nature3', 'nature4'],
-    Random:['random0', 'random1', 'random2', 'random3', 'random4'],
-    Person:['person0', 'person1', 'person2', 'person3', 'person4'],
-    Action:['action0', 'action1', 'action2', 'action3', 'action4'],
-    World:['world0', 'world1', 'world2', 'world3', 'world4']};
+  // const topic = [' Object', 'Nature', 'Random', 'Person', 'Action', 'World'];
+  // var card = {Objects:['object0', 'object1', 'object2', 'object3', 'object4'],
+  //   Nature:['nature0', 'nature1', 'nature2', 'nature3', 'nature4'],
+  //   Random:['random0', 'random1', 'random2', 'random3', 'random4'],
+  //   Person:['person0', 'person1', 'person2', 'person3', 'person4'],
+  //   Action:['action0', 'action1', 'action2', 'action3', 'action4'],
+  //   World:['world0', 'world1', 'world2', 'world3', 'world4']};
 
     // console.log(Object.entries(card)[0][1][0]);
     // console.log(Object.entries(card)[1][1]);
