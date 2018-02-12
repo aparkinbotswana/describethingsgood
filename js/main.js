@@ -1,4 +1,4 @@
-// import { topic, card } from "cards"
+var Bounce = require('bounce.js');
 document.addEventListener('DOMContentLoaded', function(){
   // const topic = [' Object', 'Nature', 'Random', 'Person', 'Action', 'World'];
   // var card = {Objects:['object0', 'object1', 'object2', 'object3', 'object4'],
