@@ -1,4 +1,8 @@
-var Bounce = require('bounce.js');
+let Bounce = require('bounce.js');
+let allCards = require('./cards.js')
+console.log(allCards);
+
+
 document.addEventListener('DOMContentLoaded', function(){
   // const topic = [' Object', 'Nature', 'Random', 'Person', 'Action', 'World'];
   // var card = {Objects:['object0', 'object1', 'object2', 'object3', 'object4'],
@@ -14,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function(){
     // console.log(Object.entries(card)[3][1]);
     // console.log(Object.entries(card)[4][1]);
     // console.log(Object.entries(card)[5][1]);
-    console.log(card);
+    
+    // console.log(card);
 
 
   function changeAttr(el, attr, attrProperty){
