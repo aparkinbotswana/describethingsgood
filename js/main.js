@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
   //   Person:['person0', 'person1', 'person2', 'person3', 'person4'],
   //   Action:['action0', 'action1', 'action2', 'action3', 'action4'],
   //   World:['world0', 'world1', 'world2', 'world3', 'world4']};
-  console.log(allCards);
+  console.log(allCards.allCards);
 
 
     // console.log(Object.entries(card)[0][1][0]);
