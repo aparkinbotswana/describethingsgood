@@ -1,6 +1,6 @@
-let Bounce = require('bounce.js');
+// let Bounce = require('bounce.js');
+const Oridomi = require('oridomi')
 let allCards = require('./cards.js')
-console.log(allCards);
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
   //   Person:['person0', 'person1', 'person2', 'person3', 'person4'],
   //   Action:['action0', 'action1', 'action2', 'action3', 'action4'],
   //   World:['world0', 'world1', 'world2', 'world3', 'world4']};
+  console.log(allCards);
+
 
     // console.log(Object.entries(card)[0][1][0]);
     // console.log(Object.entries(card)[1][1]);
@@ -65,27 +67,27 @@ document.addEventListener('DOMContentLoaded', function(){
   } // takes drawn card out of card array so that it is not drawn again
 
 
-  function animationPlay() {
-    let bounce = new Bounce();
-    bounce
-    .rotate({
-        from: 0,
-        to: 360,
-        easing: "bounce",
-        duration: 1000,
-        delay: 0,
-        bounce: 4,
-        stiffness: 3
-    })
-    .skew({
-        easing: "sway",
-        duration: 1000,
-        delay: 0,
-        bounce: 4,
-        stiffness: 3
-    })
-    .applyTo(document.querySelectorAll(".animation-target"));
-  } //animation for cards
+  // function animationPlay() {
+  //   let bounce = new Bounce();
+  //   bounce
+  //   .rotate({
+  //       from: 0,
+  //       to: 360,
+  //       easing: "bounce",
+  //       duration: 1000,
+  //       delay: 0,
+  //       bounce: 4,
+  //       stiffness: 3
+  //   })
+  //   .skew({
+  //       easing: "sway",
+  //       duration: 1000,
+  //       delay: 0,
+  //       bounce: 4,
+  //       stiffness: 3
+  //   })
+  //   .applyTo(document.querySelectorAll(".animation-target"));
+  // } //animation for cards
 
 
   document.getElementById('draw').addEventListener('click', drawCard);

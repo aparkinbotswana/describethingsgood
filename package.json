@@ -4,7 +4,8 @@
   "description": "jame's game",
   "main": "main.js",
   "dependencies": {
-    "bounce.js": "^0.8.2"
+    "bounce.js": "^0.8.2",
+    "oridomi": "^1.1.2"
   },
   "devDependencies": {
     "browserify": "^15.2.0"

@@ -7,7 +7,6 @@
  <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto|Slabo+27px" rel="stylesheet">
  <link rel="stylesheet" href="css/style.css">
  <script type="text/javascript" src="js/bundle.js"></script>
- <!-- <script src="js/bounce.js" charset="utf-8"></script> -->
 
  <!-- <script src="js/main.js" charset="utf-8"></script>  -->
  <title>Describe Things Good</title>
@@ -31,27 +30,5 @@
 
      </div>
   </div>
-
-  <div id="map">
-
-</div>
-<script>
-     function initMap() {
-       var beautyluscious = {lat: -35.038385, lng: 150.669033};
-       var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 16,
-         center: beautyluscious
-       });
-       var marker = new google.maps.Marker({
-         position: beautyluscious,
-         map: map
-       });
-     }
-   </script>
-   <script async defer
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2VBSSc1_OGeDAuyND1sVaCq-3y_Jy_PQ&callback=initMap">
-   </script>
-
-
  </body>
  </html>
