@@ -1,29 +1,17 @@
 // let Bounce = require('bounce.js');
 const Oridomi = require('oridomi')
-let allCards = require('./cards.js')
+let cards = require('./cards')
 
 
 document.addEventListener('DOMContentLoaded', function(){
-  // const topic = [' Object', 'Nature', 'Random', 'Person', 'Action', 'World'];
-  // var card = {Objects:['object0', 'object1', 'object2', 'object3', 'object4'],
-  //   Nature:['nature0', 'nature1', 'nature2', 'nature3', 'nature4'],
-  //   Random:['random0', 'random1', 'random2', 'random3', 'random4'],
-  //   Person:['person0', 'person1', 'person2', 'person3', 'person4'],
-  //   Action:['action0', 'action1', 'action2', 'action3', 'action4'],
-  //   World:['world0', 'world1', 'world2', 'world3', 'world4']};
-  console.log(allCards.allCards);
+  const topic = Object.entries(cards)[0][1].topic
+  const card = Object.entries(cards)[0][1].card
+  // console.log(topic); // This is an object with all the topics. Whoop.
+  // console.log(card.World[0]);
 
-
-    // console.log(Object.entries(card)[0][1][0]);
-    // console.log(Object.entries(card)[1][1]);
-    // console.log(Object.entries(card)[2][1]);
-    // console.log(Object.entries(card)[3][1]);
-    // console.log(Object.entries(card)[4][1]);
-    // console.log(Object.entries(card)[5][1]);
+    // console.log(Object.entries(cards)[0][1].topic);
+    // console.log(Object.entries(cards)[0][1].card.World);
     
-    // console.log(card);
-
-
   function changeAttr(el, attr, attrProperty){
     document.querySelector(el).setAttribute(attr, attrProperty);
   }
@@ -41,20 +29,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   function drawCard(){
-    var cardNum = getRandomInt(Object.entries(card)[0][1].length)
-    let objectKey = 0
-    if (Object.entries(card)[0][1].length <= 0) {
+    var cardNum = getRandomInt(card.Random.length) //grabs random number to act as index for all cards
+    if (card.Random.length <= 0) {
       console.log('No more cards');
       return
     }
     topicSelect()
-    while (objectKey < 6) {
-      if (objectKey == 6) {
-      break;
+
+    for (const key in card) {
+      if (card.hasOwnProperty(key)) {
+        // const element = card[key];
+        // console.log(card[key]);
+        // ui rendering goes in here.... MAYBE
       }
-      //draw card ui stuff goes here YUMMY!!!
-      console.log(Object.entries(card)[objectKey][1][cardNum]);
-      objectKey++
     }
     discardCard(cardNum)
   }
@@ -91,5 +78,5 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   document.getElementById('draw').addEventListener('click', drawCard);
-  document.getElementById('draw').addEventListener('click', animationPlay);
+  // document.getElementById('draw').addEventListener('click', animationPlay);
 }, false);
