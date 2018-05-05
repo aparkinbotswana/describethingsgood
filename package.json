@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "echo \"no tests yet\"",
-    "bundle": "browserify ./js/main.js --outfile ./js/bundle.js"
+    "bundle": "browserify ./js/main.js --outfile ./js/bundle.js",
+    "watchbundle": "watchify ./js/main.js --outfile ./js/bundle.js"
   },
   "repository": {
     "type": "git",
