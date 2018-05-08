@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', function(){
   const topic = Object.entries(cards)[0][1].topic
   const card = Object.entries(cards)[0][1].card
   console.log(cards);
-  // console.log(topic); // This is an object with all the topics. Whoop.
-  // console.log(card.World[0]);
 
     
   // function changeAttr(el, attr, attrProperty){
@@ -25,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function(){
   function topicSelect() {
     let choosenTopic = topic[getRandomInt(topic.length)]
     topicCard.innerHTML = choosenTopic
-    // console.log(choosenTopic);
   }; // Selects the topic for the current round
 
   function drawCard(){
+
     if (card.Random.length <= 0) {
       console.log('No more cards');
       return
-    };
+    }; // breaks out of function if all cards have been used.
 
     document.getElementById("timer").innerHTML = ''
     let countDown = 30
@@ -46,9 +44,8 @@ document.addEventListener('DOMContentLoaded', function(){
       for (let i = 5; i > -1; i--) {
         previousCards[i].remove();
       }
-    } // Removes previous cards from DOM.
+    } // Removes previous cards from DOM. IF statement is required because, initially, there is nothing in the curren-card class so it will through an error
     
-    // console.log(cardNum);
     topicSelect() //chooses the topic for the round.
 
     
