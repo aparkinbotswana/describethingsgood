@@ -3,7 +3,6 @@ const cards = require('./cards')
 let firstTurn = true
 
 
-
 document.addEventListener('DOMContentLoaded', function(){
   const topicCard = document.getElementById('topic-card')
   const topic = Object.entries(cards)[0][1].topic
@@ -35,9 +34,12 @@ document.addEventListener('DOMContentLoaded', function(){
       return
     };
 
+    document.getElementById("timer").innerHTML = ''
+    let countDown = 30
     const currentCards = [];
     const cardDom = document.getElementById('card');
     let currentCardLength = card.Random.length // Because we splice the card out of the array of all cards, You need to save the array.length before this happens so that you can get a consistent number being passed through as the max for getRandomInt
+
 
     if (firstTurn === false) {
       let previousCards = document.getElementsByClassName('current-card');
@@ -71,7 +73,25 @@ document.addEventListener('DOMContentLoaded', function(){
     } // ui rendering goes in here
 
     firstTurn = false
+
+
+    const timer = function(){
+      console.log(countDown);
+      if (countDown === 0) {
+        document.getElementById("timer").innerHTML = "FINISHED!";
+        clearInterval(timerInterval);
+        return
+      }
+      document.getElementById("timer").innerHTML = countDown + "s ";
+      countDown -= 1
+    }
+
+
+    const timerInterval = setInterval(timer, 1000);
   };
+
+
+
   document.getElementById('draw').addEventListener('click', drawCard);
   // document.getElementById('draw').addEventListener('click', animationPlay);
 }, false);
