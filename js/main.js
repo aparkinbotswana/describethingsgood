@@ -81,7 +81,9 @@ document.addEventListener('DOMContentLoaded', function(){
       }
       document.getElementById("timer").innerHTML = countDown + "s ";
       countDown -= 1
-    }
+    } // MUST FIX TIMED
+    // CURRENTLY RUNS AND RESETS AT EVERY CLICK. SHOULD CONTINUE TO COUNTDOWN AND NOT STOP. 
+    // CONSIDER USING BOOLEAN WHICH IS CHECKED?
 
 
     const timerInterval = setInterval(timer, 1000);
