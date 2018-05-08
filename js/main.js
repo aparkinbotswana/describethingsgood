@@ -1,4 +1,3 @@
-const Oridomi = require('oridomi')
 const cards = require('./cards')
 let firstTurn = true
 
