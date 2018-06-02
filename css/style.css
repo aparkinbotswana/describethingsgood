@@ -8,3 +8,5 @@
 .flex-2{flex: 2;}
 .center{text-align: center;}
 .right{text-align: right;}
+.active-topic{ background-color: black;
+color: white;}
