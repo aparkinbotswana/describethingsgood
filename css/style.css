@@ -1,9 +1,20 @@
+body{
+  background: black;
+
+}
+
 h1, h2 { 
   font-family: 'Bungee', cursive;
+  color: #fedc3d;
 }
 
 p { 
   font-family: 'Slabo 27px', serif;
+  color: #fedc3d;
+}
+
+.title {
+  text-align: center;
 }
 
 .button-container {
@@ -20,42 +31,36 @@ p {
 }
 
 .button-container__button:hover {
-  
+ transition: background-color 0.5s ease;
+ background-color: #ffe469;
+ color: black;
 }
 
 .cards-container {
   display: flex;
   margin: 10px 40px;
-  justify-content: space-between
 }
 
 .cards-container__topic
 {
+  margin-right: 15px;
+  flex: 1;
   text-align: right;
-  flex-basis: 45%;
 }
 
 .cards-container__card {
-  flex-basis: 45%;
+  margin-left: 15px;
+  flex: 1;
 }
 
 .cards-container__individual {
 }
 
 .active-topic { 
-  background-color: black;
   color: white;
 }
 
-.cards { 
-  margin: 0 auto
-}
-
-.center {
+#timer {
   text-align: center;
-}
-
-.active-topic {
-  background-color: black;
-  color: white;
+  font-size: 18px
 }
