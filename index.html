@@ -1,40 +1,39 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto|Slabo+27px" rel="stylesheet">
- <link rel="stylesheet" href="css/style.css">
- <script type="text/javascript" src="js/bundle.js"></script>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto|Slabo+27px" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/bundle.js"></script>
 
  <!-- <script src="js/main.js" charset="utf-8"></script>  -->
- <title>Describe Things Good</title>
- </head>
- <body>
-  <h1 class="font1 center">Describe Things Good</h1>
-  <h2 class="font1 center">The Game!</h2>
+  <title>Describe Things Good</title>
+  </head>
+  <body>
+    <header class="">
+      <h1 class="center">Describe Things Good</h1>
+      <h2 class="center">The Game!</h2>
+    </header>
 
-  <div>
-    <p id="draw" class="font2 center">Draw Card</p>
-  </div>
-
-  <div id="topic">
-    <p id="topic-card"></p>
-  </div>
-
-  <div class="container">
-    <div class="flex-1 right">
-        <p id="Object">Object</p>
-        <p id="Nature">Nature</p>
-        <p id="Random">Random</p>
-        <p id="Person">Person</p>
-        <p id="Action">Action</p>
-        <p id="World">World</p>
+    <div class="button-container">
+      <p id="draw" class="button-container__button">Draw Card</p>
     </div>
-    <div class="flex-1 center" id="card"></div>
-  </div>
-
-  <p class="center" id="timer"></p>
- </body>
- </html>
+    <div class="cards-container">
+      <div class="cards-container__topic">
+        <p>TOPIC</p>
+        <p class="cards-container__individual" id="Object">Object</p>
+        <p class="cards-container__individual" id="Nature">Nature</p>
+        <p class="cards-container__individual" id="Random">Random</p>
+        <p class="cards-container__individual" id="Person">Person</p>
+        <p class="cards-container__individual" id="Action">Action</p>
+        <p class="cards-container__individual" id="World">World</p>
+      </div>
+      <div class="cards-container__card" id="card">
+        <p>CARD</p>
+      </div>
+    </div>
+    <p class="center" id="timer"></p>
+  </body>
+  </html>

@@ -1,4 +1,4 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 const allCards = {
   topic: ["Object", "Nature", "Random", "Person", "Action", "World"],
   card: { 
@@ -20,70 +20,64 @@ module.exports = {allCards}
 
  
 },{}],2:[function(require,module,exports){
-const cards = require('./cards')
+const cards = require('./cards');
 
 document.addEventListener('DOMContentLoaded', function(){
-  let newCard = cards.allCards.card
-  let currentTopic = cards.allCards.topic
-  let count = 30
-  const cardDom = document.getElementById('card') 
-  const drawCard = document.getElementById('draw')
-  let firstTurn = true
+  let newCard = cards.allCards.card;
+  let currentTopic = cards.allCards.topic;
+  let count = 30;
+  const cardDom = document.getElementById('card') ;
+  const drawCard = document.getElementById('draw');
+  let firstTurn = true;
 
 
   const choosenCard = function(){
-    choosenTopic()
+    choosenTopic();
 
     if (count === 30) {
-      const countInterval = setInterval(timer, 1000)
-    } else if (count === 0){
-      count = 30
-    }
+      const timerInterval = setInterval(function () {
+        document.getElementById('timer').innerHTML = count;
+        count--;
+        if (count < 0) {
+          clearInterval(timerInterval);
+          count = 30;
+        }
+      }, 1000);
+    } 
 
     if (firstTurn === false) {    
       let previousCard = document.getElementsByClassName('current-card');
       for (let i = 5; i > -1; i--) {
-        previousCard[i].remove()
+        previousCard[i].remove();
       }
     }
 
-
     for (const key in newCard) {
-      let index = randomNum(newCard[key].length)
-      // console.log(index);
-      // console.log(newCard[key][index]);
-      let p = document.createElement('p')
-      p.innerHTML = newCard[key][index]
-      p.setAttribute('class', 'current-card')
-      cardDom.appendChild(p)
+      let index = randomNum(newCard[key].length);
+      let p = document.createElement('p');
+      p.innerHTML = newCard[key][index];
+      p.setAttribute('class', 'cards-container__individual current-card');
+      cardDom.appendChild(p);
 
     }  
-    firstTurn = false
+    firstTurn = false;
   }
 
+
   const randomNum = function(max){
-    return Math.floor(Math.random() * max)
+    return Math.floor(Math.random() * max);
   }
 
 
   const choosenTopic = function(){
     if (firstTurn === false) {
-      document.getElementsByClassName('active-topic')[0].classList.remove('active-topic')  
+      document.getElementsByClassName('active-topic')[0].classList.remove('active-topic');  
     }
-    let index = randomNum(currentTopic.length)
-    console.log(currentTopic[index]);
-    document.getElementById(currentTopic[index]).classList.add('active-topic')
+    let index = randomNum(currentTopic.length);
+    document.getElementById(currentTopic[index]).classList.add('active-topic');
   }
 
-  const timer = function (){
-    if (count > -1) {
-      console.log(count);
-      document.getElementById('timer').innerHTML = count
-      count -= 1
-    }
-  }
-
-  drawCard.addEventListener('click', choosenCard)
+  drawCard.addEventListener('click', choosenCard);
 }, false);
 
 },{"./cards":1}]},{},[2]);

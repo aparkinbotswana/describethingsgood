@@ -1,12 +1,61 @@
-.font1{font-family: 'Bungee', cursive;}
-.font2{font-family: 'Slabo 27px', serif;}
-/* .fontcolour{color: ;}
-.bgcolour{background-color: } */
-.mar0auto{margin: 0 auto;}
-.container{display: flex;}
-.flex-1{flex: 1;}
-.flex-2{flex: 2;}
-.center{text-align: center;}
-.right{text-align: right;}
-.active-topic{ background-color: black;
-color: white;}
+h1, h2 { 
+  font-family: 'Bungee', cursive;
+}
+
+p { 
+  font-family: 'Slabo 27px', serif;
+}
+
+.button-container {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.button-container__button {
+  font-size: 20px;
+  border-radius: 10%;
+  cursor: pointer;
+  padding: 15px;
+  display: inline;
+}
+
+.button-container__button:hover {
+  
+}
+
+.cards-container {
+  display: flex;
+  margin: 10px 40px;
+  justify-content: space-between
+}
+
+.cards-container__topic
+{
+  text-align: right;
+  flex-basis: 45%;
+}
+
+.cards-container__card {
+  flex-basis: 45%;
+}
+
+.cards-container__individual {
+}
+
+.active-topic { 
+  background-color: black;
+  color: white;
+}
+
+.cards { 
+  margin: 0 auto
+}
+
+.center {
+  text-align: center;
+}
+
+.active-topic {
+  background-color: black;
+  color: white;
+}
